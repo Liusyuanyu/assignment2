@@ -1,0 +1,39 @@
+#name {
+  color: blue;
+  text-align: center;
+  font-size: 36px;
+  border: 2px blue solid;
+  height: 40;
+  width: 300;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#headshot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  padding: 20px;
+}
+
+#introduction {
+  color: black;
+  text-align: center;
+  font-size: 20;
+  height: 150;
+  width: 450;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px white solid;
+  padding: 20px;
+}
+
+#github {
+    display: block;
+    font-size: 20;
+    height: 50;
+    width: 300;
+    margin-left: auto;
+    margin-right: auto;
+}
