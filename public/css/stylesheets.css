@@ -37,3 +37,13 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+table, th, td {
+  border: 1px solid silver; 
+  padding: 4px;
+  border-collapse: collapse;
+}
+
+#head_pro_id, #body_pro_id  {
+  display:none;
+}
