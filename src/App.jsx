@@ -1,21 +1,3 @@
-// class MyProfile extends  React.Component{
-//     render(){
-//         const name = "Hsuan Yu, Liu";
-//         const headshot = "/hsuan.jpg";
-//         return(
-//             <div>
-//                 <div id="name" title="My Name">{name}</div>
-//                 <img id="headshot" alt="headshot" src={headshot} accessKey="img"/>
-//                 <div id="introduction" title="My Introduction">I am currently a graduate student in Computer Science at San Diego state University. I have token Machine Learning, Data mining, and Big data classes, etc. My skills include python, C#, and Java. Moreover, I was a software engineer for three years, and a data scientist intern for two months.</div>
-//                 <a href='https://github.com/Liusyuanyu/CS648FullStackWebDevelopment.git'><button id="github">VIEW MY GITHUB REPO</button></a>
-//             </div>
-//         )
-//     }
-// }
-
-// const element =<MyProfile/>;
-
-
 class InventorySubhead extends React.Component {
     render() {
         const subhead = "Showing all available products";
@@ -86,16 +68,11 @@ class ProductAdd extends React.Component {
     const form = document.forms.productAdd;
     var price = form.priceper.value;
     price = price.replace('$','');
-    // alert(price);
     const product = {
       name: form.name.value, category: form.category.value,
       price: price, image_url: form.image_url.value
     };
     this.props.createProduct(product);
-    // form.category.selectedIndex  = -1;
-    // form.priceper.value = "$";
-    // form.name.value = "";
-    // form.image_url.value = "";
     form.reset();
   }
   render() {
@@ -144,12 +121,6 @@ class MyProductList extends  React.Component{
     this.createProduct = this.createProduct.bind(this);
   }
 
-  componentDidMount() {
-    this.loadData();
-  }
-  loadData() {
-    this.setState({ products: initialProducts });
-  }
   createProduct(product) {
     product.id = this.state.products.length + 1;
     const newProductList = this.state.products.slice();
@@ -164,10 +135,8 @@ class MyProductList extends  React.Component{
         <React.Fragment>
             <h1>{head}</h1>
             <InventorySubhead/>
-            <hr/>
-            <br/>
-            <ProductTable products={this.state.products}/>
-            <br/>
+            <hr/><br/>
+            <ProductTable products={this.state.products}/><br/>
             <label>{addhead}</label>
             <hr/>
             <ProductAdd createProduct = {this.createProduct}/>

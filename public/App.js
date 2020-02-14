@@ -1,18 +1,3 @@
-// class MyProfile extends  React.Component{
-//     render(){
-//         const name = "Hsuan Yu, Liu";
-//         const headshot = "/hsuan.jpg";
-//         return(
-//             <div>
-//                 <div id="name" title="My Name">{name}</div>
-//                 <img id="headshot" alt="headshot" src={headshot} accessKey="img"/>
-//                 <div id="introduction" title="My Introduction">I am currently a graduate student in Computer Science at San Diego state University. I have token Machine Learning, Data mining, and Big data classes, etc. My skills include python, C#, and Java. Moreover, I was a software engineer for three years, and a data scientist intern for two months.</div>
-//                 <a href='https://github.com/Liusyuanyu/CS648FullStackWebDevelopment.git'><button id="github">VIEW MY GITHUB REPO</button></a>
-//             </div>
-//         )
-//     }
-// }
-// const element =<MyProfile/>;
 class InventorySubhead extends React.Component {
   render() {
     const subhead = "Showing all available products";
@@ -73,19 +58,14 @@ class ProductAdd extends React.Component {
     e.preventDefault();
     const form = document.forms.productAdd;
     var price = form.priceper.value;
-    price = price.replace('$', ''); // alert(price);
-
+    price = price.replace('$', '');
     const product = {
       name: form.name.value,
       category: form.category.value,
       price: price,
       image_url: form.image_url.value
     };
-    this.props.createProduct(product); // form.category.selectedIndex  = -1;
-    // form.priceper.value = "$";
-    // form.name.value = "";
-    // form.image_url.value = "";
-
+    this.props.createProduct(product);
     form.reset();
   }
 
@@ -131,16 +111,6 @@ class MyProductList extends React.Component {
       products: []
     };
     this.createProduct = this.createProduct.bind(this);
-  }
-
-  componentDidMount() {
-    this.loadData();
-  }
-
-  loadData() {
-    this.setState({
-      products: initialProducts
-    });
   }
 
   createProduct(product) {
